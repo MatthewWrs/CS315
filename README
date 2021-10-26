@@ -1,0 +1,61 @@
+CS 315-001
+Final Project
+Matthew Wirasakti
+
+Abstract:
+The Program Evaluation and Review Technique, abbreviated PERT, is a technique commonly used in 
+project management in order to determine different time constraints on a project by looking at 
+individual steps, or activities, that must be completed to complete a project. These activities 
+can be classified as predecessor and/or successor events, where different activities can only be 
+started once other activities have been completed. Each activity also has a variety information. 
+One type of information is the time it might take to complete a certain activity, this duration 
+then has four subcategories: pessimistic, optimistic, most likely, and expected time. In a diagram, 
+an activity may also have descriptors that relay what the earliest and latest start and finish 
+times are of that activity, and how much slack is available for each activity. Using PERT, one can 
+find an order of activities from start to finish that would need the least amount of time to complete, 
+one can also see the critical path of the project and find out how long it would take when traversing it. 
+The goal of the program is to allow for a user to easily find the most optimal (time efficient) path 
+to take on a project. The program will consider best and worst-case scenarios and will receive user 
+input to allow for the user to customize the output to better fit his or her needs.
+
+This program will take an input of a list of activities, and after receiving some information about 
+the activity, the program will be able to analyze the different paths of the project. The program will 
+then output the paths (starting event to every other event), and their information, that would take the 
+shortest amount of time and the longest amount of time (also referred to as the critical path). Since the 
+activities in the project will form a Directed Acyclic Graph, topological sorting can be used in order to 
+determine specific values needed by the user.
+
+How to Compile:
+g++ fp.cpp
+
+How to Execute:
+./a.out < [filename].txt
+Example:
+./a.out < input.txt
+
+Criteria for Input:
+The input will be in a text file and after compiling the program will be inputted through the terminal
+with the use of "<".
+The input will be formatted as follows:
+number of events
+number of paths
+starting event
+from event -> to event - expected time - optimistic time - pessimistic time
+
+Example input:
+4
+3
+0
+1 3 4 2 6
+.
+.
+.
+
+Explanation of example input:
+4 - 4 events in the project (including starting and finishing)
+3 - 3 paths in the project
+0 - starting event is event 0
+from event 1 - to event 3 - 4 units of time - 2 units of optimistic time - 6 units of pessimistic time
+.
+.
+.

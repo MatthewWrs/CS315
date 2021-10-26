@@ -1,0 +1,6 @@
+number of events
+number of paths
+starting events
+//from event -> to event - weight
+5 2 3
+//event 5 to event 2 takes 3 units of time
